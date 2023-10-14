@@ -9,7 +9,7 @@ import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
-
+import java.util.HashMap;
 public class Templater {
 
   private static Configuration configuration;
@@ -26,6 +26,16 @@ public class Templater {
   public static String render(String templatePath) {
     return new FreeMarkerEngine(configuration)
         .render(new ModelAndView(null, templatePath));
+  }
+
+  public static String error(Exception e) {
+    App.logger.atInfo().log(e.getMessage());
+    return new FreeMarkerEngine(configuration)
+        .render(new ModelAndView(new HashMap<String, Object>() {
+          {
+            put("error", e);
+          }
+        }, "error.ftl"));
   }
 
   private static Configuration freemarkerConfig() {
