@@ -4,9 +4,11 @@ import java.sql.Date;
 
 public class Book {
 
-  private Long id;
-  private String title;
-  private String description;
-  private Date createdAt;
+  Long id;
+  String title;
+  String description;
+  double price;
+  String image;
+  Date createdAt;
 
 }

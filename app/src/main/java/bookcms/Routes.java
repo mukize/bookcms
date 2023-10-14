@@ -7,7 +7,6 @@ import bookcms.Controllers.BookController;
 
 public class Routes {
 
-  public static Templater templater = new Templater();
   public static Logger logger = LoggerFactory.getLogger(Routes.class);
 
   public void register() {
@@ -25,10 +24,10 @@ public class Routes {
   }
 
   private void initGuestRoutes() {
-    get("/", (req, res) -> templater.render("guest/home.ftl"));
-    get("/contact", (req, res) -> templater.render("guest/contact.ftl"));
-    get("/about", (req, res) -> templater.render("guest/about.ftl"));
-
+    get("/", (req, res) -> Templater.render("guest/home.ftl"));
+    get("/contact", (req, res) -> Templater.render("guest/contact.ftl"));
+    get("/about", (req, res) -> Templater.render("guest/about.ftl"));
+    get("/session", (req, res) -> req.session().id());
     get("/books", (req, res) -> BookController.guestIndex(req, res));
     get("/books/:id", (req, res) -> BookController.guestShow(req, res));
   }

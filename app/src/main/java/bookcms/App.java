@@ -4,24 +4,26 @@
 package bookcms;
 
 import static spark.Spark.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sql2o.Sql2o;
 
 public class App {
 
-    public static String resourceDir = System.getProperty("user.dir") + "/src/main/resources";
-    public static Sql2o db =
-            new Sql2o("jdbc:sqlite:" + resourceDir + "/database/bookcms.db", null, null);
+    public static String resourceDir;
+    public static Logger logger;
+    public static Sql2o sql;
 
-    public static void main(String[] args) {
-        configureStaticLocation();
-        port(8080);
-        new Routes().register();
+    static {
+        resourceDir = System.getProperty("user.dir") + "/src/main/resources";
+        sql = Database.sql;
+        logger = LoggerFactory.getLogger(App.class);
     }
 
-    public static void configureStaticLocation() {
-        String projectDir = System.getProperty("user.dir");
-        String staticDir = "/src/main/resources/public";
-        staticFiles.externalLocation(projectDir + staticDir);
+    public static void main(String[] args) {
+        staticFiles.externalLocation(resourceDir + "/public");
+        port(8080);
+        new Routes().register();
     }
 
 }

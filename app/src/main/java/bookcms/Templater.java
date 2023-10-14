@@ -12,17 +12,23 @@ import spark.template.freemarker.FreeMarkerEngine;
 
 public class Templater {
 
-  public String render(Map<String, Object> model, String templatePath) {
-    return new FreeMarkerEngine(freemarkerConfig())
+  private static Configuration configuration;
+
+  static {
+    configuration = freemarkerConfig();
+  }
+
+  public static String render(Map<String, Object> model, String templatePath) {
+    return new FreeMarkerEngine(configuration)
         .render(new ModelAndView(model, templatePath));
   }
 
-  public String render(String templatePath) {
-    return new FreeMarkerEngine(freemarkerConfig())
+  public static String render(String templatePath) {
+    return new FreeMarkerEngine(configuration)
         .render(new ModelAndView(null, templatePath));
   }
 
-  private Configuration freemarkerConfig() {
+  private static Configuration freemarkerConfig() {
     Configuration fltConfig = new Configuration(Configuration.VERSION_2_3_26);
     try {
       fltConfig.setDirectoryForTemplateLoading(
