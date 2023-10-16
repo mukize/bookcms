@@ -13,6 +13,7 @@ GUI portion under "gui"
 
 - Spark
 - Freemarker
+- Htmx
 - Sqlite
 
 ## Development
