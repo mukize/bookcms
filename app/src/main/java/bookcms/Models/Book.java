@@ -1,5 +1,7 @@
 package bookcms.Models;
 
+import bookcms.Util;
+
 public class Book {
 
   private Long id;
@@ -8,6 +10,10 @@ public class Book {
   private double price;
   private String image;
   private String createdAt;
+
+  public String getSlug() {
+    return Util.toSlug(title);
+  }
 
   public Long getId() {
     return id;
