@@ -1,4 +1,4 @@
-<#macro guest title hide_heading=false>
+<#macro guest title hideHeading=false>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -6,6 +6,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/main-compiled.css">
+      <script src="/js/htmx.min.js"></script>
       <title>
         ${title} | BookCMS
       </title>
@@ -20,7 +21,7 @@
               alt="BookCMS logo"
               class="w-20 h-20" />
           </a>
-          <nav class="flex items-center gap-4">
+          <nav class="flex items-center gap-4" hx-boost="true">
             <a href="/" class="${title?matches('Home')?then('text-blue-700', '')} transition-colors hover:text-cyan-600">
               Home
             </a>
@@ -33,19 +34,18 @@
             <a href="/contact" class="${title?matches('Contact')?then('text-blue-700', '')} transition-colors hover:text-cyan-600">
               Contact
             </a>
-            <#-- <button class="w-20 h-10 transition-colors border border-black rounded-md bg-cyan-500 hover:bg-cyan-300">
+            <@c.button class="border-black bg-cyan-500 hover:bg-cyan-300">
               Cart
-              </button> -->
-              <@c.button class="border-black bg-cyan-500 hover:bg-cyan-300">
-                Cart
-              </@c.button>
+            </@c.button>
           </nav>
         </div>
-        <div class="flex justify-center">
-          <h1 class="text-5xl font-extralight">
-            ${title}
-          </h1>
-        </div>
+        <#if (!hideHeading)>
+          <div class="flex justify-center">
+            <h1 class="text-5xl font-extralight">
+              ${title}
+            </h1>
+          </div>
+        </#if>
       </header>
       <main class="px-10 py-6 grow">
         <#nested />
@@ -54,6 +54,5 @@
         <p class="m-auto">Made with &hearts; @ 2023</p>
       </footer>
     </body>
-
   </html>
 </#macro>
