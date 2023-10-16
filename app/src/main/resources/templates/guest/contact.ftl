@@ -1,4 +1,3 @@
-<#import "/layouts.ftl" as layout />
 <@layout.guest title="Contact">
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa blanditiis voluptate,
