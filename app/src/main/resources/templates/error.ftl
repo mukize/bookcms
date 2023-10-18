@@ -1,2 +1,2 @@
-Error occured: ${error.getMessage()} <br>
+Error occured{${error.class}}: ${error.getMessage()} <br>
 Cause: ${error.getCause()}
