@@ -5,11 +5,11 @@ public class Book {
 
   private Long id;
   private String title;
+  private String slug;
   private String description;
   private double price;
   private String image;
   private String createdAt;
-
 
   public Long getId() {
     return id;
@@ -21,6 +21,14 @@ public class Book {
 
   public void setTitle(String title) {
     this.title = title;
+  }
+
+  public String getSlug() {
+    return slug;
+  }
+
+  public void setSlug(String slug) {
+    this.slug = slug;
   }
 
   public String getDescription() {

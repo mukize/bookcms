@@ -27,9 +27,9 @@ public class Routes {
     get("/", (req, res) -> Templater.render("guest/home.ftl"));
     get("/contact", (req, res) -> Templater.render("guest/contact.ftl"));
     get("/about", (req, res) -> Templater.render("guest/about.ftl"));
-    get("/session", (req, res) -> req.session().id());
-    get("/books", (req, res) -> BookController.guestIndex(req, res));
-    get("/books/:id", (req, res) -> BookController.guestShow(req, res));
+
+    get("/books", (req, res) -> BookController.guestIndex());
+    get("/books/:slug", (req, res) -> BookController.guestShow(req.params(":slug")));
   }
 
 }

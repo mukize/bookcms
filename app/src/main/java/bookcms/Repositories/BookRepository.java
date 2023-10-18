@@ -18,10 +18,10 @@ public class BookRepository {
     }
   }
 
-  public static Book find(int id) throws Exception {
+  public static Book find(String slug) throws Exception {
     try (Connection con = db.open()) {
-      return con.createQuery("select * from books where id = :id")
-          .addParameter("id", id)
+      return con.createQuery("select * from books where slug = :slug")
+          .addParameter("slug", slug)
           .executeAndFetchFirst(Book.class);
     } catch (Exception e) {
       throw e;

@@ -11,7 +11,7 @@ import java.util.Map;
 public class BookController {
 
 
-  public static String guestIndex(Request req, Response res) {
+  public static String guestIndex() {
 
     Map<String, Object> model = new HashMap<>();
     try {
@@ -23,17 +23,16 @@ public class BookController {
     return Templater.render(model, "/guest/books/index.ftl");
   }
 
-  public static String guestShow(Request req, Response res) {
-    String requestId = req.params(":name");
+  public static String guestShow(String slug) {
     Map<String, Object> model = new HashMap<>();
-
+    Book book;
     try {
-      int id = Integer.getInteger(requestId);
-      Book book = BookRepository.find(id);
-      model.put("book", BookRepository.find(id));
+      book = BookRepository.find(slug);
     } catch (Exception e) {
       return Templater.error(e);
     }
+
+    model.put("book", book);
     return Templater.render(model, "/guest/books/show.ftl");
   }
 

@@ -18,7 +18,7 @@
           </#if>
           <h2 class="text-2xl">${book.title}</h2>
           <h3 class="text-xl">${book.price}</h3>
-          <a href="/books/${book.id}" hx-boost="true" class="w-full">
+          <a href="/books/${book.slug}" hx-boost="true" class="w-full">
             <@c.button class="w-full bg-teal-400 hover:bg-teal-200">
               View More
             </@c.button>
