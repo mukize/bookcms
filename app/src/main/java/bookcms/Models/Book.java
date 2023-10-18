@@ -1,6 +1,5 @@
 package bookcms.Models;
 
-import bookcms.Util;
 
 public class Book {
 
@@ -11,9 +10,6 @@ public class Book {
   private String image;
   private String createdAt;
 
-  public String getSlug() {
-    return Util.toSlug(title);
-  }
 
   public Long getId() {
     return id;

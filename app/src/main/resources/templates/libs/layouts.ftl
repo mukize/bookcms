@@ -7,9 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/main-compiled.css">
       <script src="/js/htmx.min.js"></script>
-      <title>
-        ${title} | BookCMS
-      </title>
+      <title> ${title} | BookCMS </title>
     </head>
 
     <body class="flex flex-col min-h-screen">
@@ -19,7 +17,8 @@
             <img
               src="images/logo-placeholder-round.png"
               alt="BookCMS logo"
-              class="w-20 h-20" />
+              class="w-20 h-20" 
+            />
           </a>
           <nav class="flex items-center gap-4" hx-boost="true">
             <a href="/" class="${title?matches('Home')?then('text-blue-700', '')} transition-colors hover:text-cyan-600">

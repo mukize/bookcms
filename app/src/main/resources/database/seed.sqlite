@@ -9,28 +9,32 @@ VALUES
   );
 
 INSERT INTO
-  books (title, description, price, image)
+  books (title, slug, description, price, image)
 VALUES
   (
     'Book Title 1',
+    'book-title-1',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit enim ac neque mollis, quis sodales erat tristique. Aenean suscipit leo ut dolor faucibus bibendum. Etiam vitae velit eu massa sagittis ultricies sed quis sapien. Donec porta libero eros, egestas venenatis lorem gravida eget. Maecenas ultricies finibus laoreet. Nunc maximus urna lorem, sagittis fringilla lacus finibus vel. Nullam vestibulum leo nec laoreet feugiat. Proin ut feugiat diam.',
     99,
     null
   ),
   (
     'Book Title 2',
+    'book-title-2',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit enim ac neque mollis, quis sodales erat tristique. Aenean suscipit leo ut dolor faucibus bibendum. Etiam vitae velit eu massa sagittis ultricies sed quis sapien. Donec porta libero eros, egestas venenatis lorem gravida eget. Maecenas ultricies finibus laoreet. Nunc maximus urna lorem, sagittis fringilla lacus finibus vel. Nullam vestibulum leo nec laoreet feugiat. Proin ut feugiat diam.',
     99,
     null
   ),
   (
     'Book Title 3',
+    'book-title-3',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit enim ac neque mollis, quis sodales erat tristique. Aenean suscipit leo ut dolor faucibus bibendum. Etiam vitae velit eu massa sagittis ultricies sed quis sapien. Donec porta libero eros, egestas venenatis lorem gravida eget. Maecenas ultricies finibus laoreet. Nunc maximus urna lorem, sagittis fringilla lacus finibus vel. Nullam vestibulum leo nec laoreet feugiat. Proin ut feugiat diam.',
     99,
     null
   ),
   (
     'Book Title 4',
+    'book-title-4',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit enim ac neque mollis, quis sodales erat tristique. Aenean suscipit leo ut dolor faucibus bibendum. Etiam vitae velit eu massa sagittis ultricies sed quis sapien. Donec porta libero eros, egestas venenatis lorem gravida eget. Maecenas ultricies finibus laoreet. Nunc maximus urna lorem, sagittis fringilla lacus finibus vel. Nullam vestibulum leo nec laoreet feugiat. Proin ut feugiat diam.',
     99,
     null

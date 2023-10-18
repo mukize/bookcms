@@ -1,7 +1,7 @@
 <@layout.guest title="Books" hideHeading=true> 
   <#list books>
     <section class="grid grid-cols-3 gap-y-10 gap-x-10">
-      <#items as book> 
+      <#items as book>
         <article class="flex flex-col items-center justify-center gap-2">
           <#if book.image??>
             <img 
